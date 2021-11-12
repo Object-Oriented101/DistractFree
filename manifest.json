@@ -3,11 +3,18 @@
   "version": "0.01",
   "manifest_version": 2,
   "description": "Display on new tab",
-  "chrome_url_overrides":{
-    "newtab": "newtab.html"
-  }, 
-  "background": {
-    "page": "background.html",
-    "persistant": false
-  } 
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": { 
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "small_icon.png"
+  }
 }
