@@ -1,6 +1,7 @@
 {
   "name": "New Tab Example",
   "version": "0.01",
+  "manifest_version": 2,
   "description": "Display on new tab",
   "chrome_url_overrides":{
     "newtab": "newtab.html"
@@ -8,6 +9,5 @@
   "background": {
     "page": "background.html",
     "persistant": false
-  }, 
-  "manifest_version": 2
+  } 
 }
