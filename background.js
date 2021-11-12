@@ -1,8 +1,17 @@
 
+console.log("Background script is running ")
 
+chrome.browserAction.onClicked.addListener(buttonClicked);
 
-chrome.runtime.onMessage.addListener((msg, sender, response) => {
-    if (msg.name == "message") {
-        response({text: "Response sent from Background.js"});
+function buttonClicked(tab) {
+    console.log("Button is clicked!");
+    let msg = {
+        txt: "hello"
     }
-});
+    chrome.tabs.sendMessage(tab.id, msg);
+
+    //Redirects to Warning Page
+    var newURL = "newtab.html";
+    chrome.tabs.create({ url: newURL });
+
+}
